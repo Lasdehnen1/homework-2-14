@@ -10,14 +10,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class StringListImplTest {
-    StringList s = new StringListImpl();
+public class IntegerListImplTest {
+    IntegerList s = new IntegerListImpl();
 
     @Test
     public void testAdd() {
-        String expected = "one";
+        Integer expected = 1;
 
-        String actual = s.add("one");
+        Integer actual = s.add(1);
 
         assertEquals(expected, actual);
 
@@ -25,19 +25,19 @@ public class StringListImplTest {
 
     @Test
     public void testTestAdd() {
-        String item = "two";
+        Integer item = 2;
         int index = 0;
 
 
-        String expected = item;
-        String actual = s.add(index, item);
+        Integer expected = item;
+        Integer actual = s.add(index, item);
 
         assertEquals(expected, actual);
     }
 
     @Test
     public void addIndexException() {
-        String item = "two";
+        Integer item = 2;
         int index = 4;
 
 
@@ -53,32 +53,33 @@ public class StringListImplTest {
         assertEquals(expected, exception.getMessage());
     }
 
+
     @Test
     public void testSet() {
-        String item = "two";
+        Integer item = 2;
         int index = 0;
 
 
 
-        String expected = item;
-        String actual = s.set(index, item);
+        Integer expected = item;
+        Integer actual = s.set(index, item);
 
         assertEquals(expected, actual);
     }
 
     @Test
     public void testRemoveItem() {
-        String item = "1";
-        String expected = item;
+        Integer item = 1;
+        Integer expected = item;
 
         s.add(item);
-        String actual = s.remove(item);
+        Integer actual = s.remove(item);
         assertEquals(expected, actual);
     }
 
     @Test
     public void removeItemException() {
-        String item = null;
+        Integer item = null;
 
 
 
@@ -95,18 +96,18 @@ public class StringListImplTest {
 
     @Test
     public void testTestRemoveIndex() {
-        String item = "two";
+        Integer item = 2;
         int index = 0;
-        String expectedString = item;
+        Integer expected = item;
 
         s.add(item);
-        String actualString = s.remove(index);
-        assertEquals(expectedString, actualString);
+        Integer actual = s.remove(index);
+        assertEquals(expected, actual);
     }
 
     @Test
     public void testRemoveIndexException() {
-        String item = "two";
+        Integer item = 2;
 
         s.add(item);
         int index = 6;
@@ -124,60 +125,60 @@ public class StringListImplTest {
 
     @Test
     public void testContains() {
-        s.add("one");
-        s.add("two");
+        s.add(1);
+        s.add(2);
 
-        assertTrue(s.contains("two"));
+        assertTrue(s.contains(2));
     }
     @Test
     public void testIndexOf() {
-        s.add("one");
-        s.add("two");
+        s.add(1);
+        s.add(2);
         int expected = 1;
 
-        int actual = s.indexOf("two");
+        int actual = s.indexOf(2);
         assertEquals(expected, actual);
     }
     @Test
     public void testIndexOfFail() {
-        s.add("one");
-        s.add("two");
+        s.add(1);
+        s.add(2);
         int expected = -1;
 
-        int actual = s.indexOf("three");
+        int actual = s.indexOf(3);
         assertEquals(expected, actual);
     }
     @Test
     public void testLastIndexOf() {
-        s.add("one");
-        s.add("two");
+        s.add(1);
+        s.add(2);
         int expected = 1;
 
-        int actual = s.lastIndexOf("two");
+        int actual = s.lastIndexOf(2);
         assertEquals(expected, actual);
     }
     @Test
     public void testLastIndexOfFail() {
-        s.add("one");
-        s.add("two");
+        s.add(1);
+        s.add(2);
         int expected = -1;
 
-        int actual = s.lastIndexOf("three");
+        int actual = s.lastIndexOf(3);
         assertEquals(expected, actual);
     }
     @Test
     public void testGet() {
-        String expected = "one";
+        Integer expected = 1;
 
-        s.add("one");
+        s.add(1);
 
-        String actual = s.get(0);
+        Integer actual = s.get(0);
 
         assertEquals(expected, actual);
     }
     @Test
     public void testGetFail() {
-        String item = "two";
+        Integer item = 2;
 
         s.add(item);
         int index = 6;
@@ -195,11 +196,11 @@ public class StringListImplTest {
 
     @Test
     public void testTestEquals() {
-        String[] test = {"one", "two", "three"};
+        Integer[] test = {1, 2, 3};
 
-        s.add("one");
-        s.add("two");
-        s.add("three");
+        s.add(1);
+        s.add(2);
+        s.add(3);
 
 
         assertEquals(test[0], s.get(0));
@@ -209,8 +210,8 @@ public class StringListImplTest {
 
     @Test
     public void testSize() {
-        s.add("one");
-        s.add("two");
+        s.add(1);
+        s.add(2);
         int expected = 2;
 
         int actual = s.size();
@@ -226,11 +227,13 @@ public class StringListImplTest {
 
     @Test
     public void testClear() {
-        s.add("one");
-        s.add("two");
+        s.add(1);
+        s.add(2);
         s.clear();
         assertTrue(s.isEmpty());
 
     }
+
+
 
 }
