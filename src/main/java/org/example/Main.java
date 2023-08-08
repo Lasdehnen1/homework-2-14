@@ -6,23 +6,23 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = createArray();
-        int[] arr1 = Arrays.copyOf(arr, 100_000);
-        int[] arr2 = Arrays.copyOf(arr, 100_000);
-        int[] arr3 = Arrays.copyOf(arr, 100_000);
-        long start = System.currentTimeMillis();
-        sortBubble(arr1);
-        long timeBubble = System.currentTimeMillis() - start;
-        System.out.println("timeBubble " + timeBubble);
-        start = System.currentTimeMillis();
-        sortSelection(arr2);
-        long timeSelection = System.currentTimeMillis() - start;
-        System.out.println("timeSelection " + timeSelection);
-        start = System.currentTimeMillis();
-        sortInsertion(arr3);
-        long timeInsertion = System.currentTimeMillis() - start;
-        System.out.println("timeInsertion " + timeInsertion);
 
+//        int[] arr = createArray();
+//        int[] arr1 = Arrays.copyOf(arr, 100_000);
+//        int[] arr2 = Arrays.copyOf(arr, 100_000);
+//        int[] arr3 = Arrays.copyOf(arr, 100_000);
+//        long start = System.currentTimeMillis();
+//        sortBubble(arr1);
+//        long timeBubble = System.currentTimeMillis() - start;
+//        System.out.println("timeBubble " + timeBubble);
+//        start = System.currentTimeMillis();
+//        sortSelection(arr2);
+//        long timeSelection = System.currentTimeMillis() - start;
+//        System.out.println("timeSelection " + timeSelection);
+//        start = System.currentTimeMillis();
+//        sortInsertion(arr3);
+//        long timeInsertion = System.currentTimeMillis() - start;
+//        System.out.println("timeInsertion " + timeInsertion);
 
 
     }
